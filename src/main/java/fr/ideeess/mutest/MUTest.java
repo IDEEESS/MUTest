@@ -1,5 +1,6 @@
 package fr.ideeess.mutest;
 
+import fr.ideeess.mutest.commands.CancelEventCommand;
 import fr.ideeess.mutest.commands.EventCommand;
 import fr.ideeess.mutest.commands.NewEventCommand;
 import fr.ideeess.mutest.events.Event;
@@ -20,6 +21,7 @@ public class MUTest extends JavaPlugin {
         //Commandes
         getCommand("newevent").setExecutor(new NewEventCommand(this));
         getCommand("event").setExecutor(new EventCommand(this));
+        getCommand("cancelevent").setExecutor(new CancelEventCommand(this));
     }
 
     @Override

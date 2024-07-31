@@ -7,3 +7,5 @@ commands:
     description: Créé un événement
   "event":
     description: Se téléporte à un événement
+  "cancelevent":
+    description: Annule un événement
