@@ -56,10 +56,10 @@ public class NewEventCommand implements CommandExecutor {
 
         Event event = new Event(eventName,x,y,z,pitch,yaw);
         for (Player players : Bukkit.getOnlinePlayers()){
-            TextComponent annonce = new TextComponent(ChatColor.GREEN + "Un nouveau événement a été créé");
-            annonce.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND,"event"));
-            annonce.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text("Clique sur le message pour être téléporté à l'événement")));
-            players.sendMessage(annonce.getText());
+            TextComponent message = new TextComponent(ChatColor.GREEN + "L'événement " + ChatColor.RED + eventName + ChatColor.GREEN + " a été créé");
+            message.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,new Text("Cliquez sur le message pour être téléporté")));
+            message.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND,"/event"));
+            players.spigot().sendMessage(message);
         }
         main.setEvent(event);
         logger.info("L'événement " + eventName + " a été créé");

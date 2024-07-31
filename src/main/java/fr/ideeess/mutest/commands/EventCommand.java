@@ -33,7 +33,7 @@ public class EventCommand implements CommandExecutor {
 
         Event event = main.getEvent();
 
-        new TeleportPlayerToEvent(player, event);
+        new TeleportPlayerToEvent(player, event,main);
         logger.info(player.getName() + " a rejoint l'événement " + event.getName());
 
         return true;
