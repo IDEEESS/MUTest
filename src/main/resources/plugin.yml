@@ -1,0 +1,7 @@
+name: MUTest
+author: IDEEESS
+version: 0.0.1
+main: fr.ideeess.mutest.MUTest
+commands:
+  "newevent":
+    description: Créé un événement
