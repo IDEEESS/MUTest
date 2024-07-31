@@ -31,7 +31,7 @@ public class NewEventCommand implements CommandExecutor {
         }
 
         String senderName = sender.getName();
-        if (!sender.hasPermission("fr.ideeess.createevent")){
+        if (!sender.hasPermission("fr.ideeess.newevent")){
             logger.warning("Le joueur " + senderName + " a essayé de créer un event mais il n'a pas les permissions requises");
             sender.sendMessage(ChatColor.RED + "Vous n'avez pas la permission requise pour effectuer cette commande");
             return false;
