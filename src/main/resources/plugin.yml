@@ -5,3 +5,5 @@ main: fr.ideeess.mutest.MUTest
 commands:
   "newevent":
     description: Créé un événement
+  "event":
+    description: Se téléporte à un événement

@@ -25,12 +25,10 @@ public class NewEventCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         Logger logger = main.getLogger();
 
-        if (!(sender instanceof Player)){
+        if (!(sender instanceof Player player)){
             sender.sendMessage(ChatColor.RED + "Seul un joueur peut exécuter cette action");
+            return false;
         }
-
-        assert sender instanceof Player;
-        Player player = (Player) sender;
 
         String senderName = sender.getName();
         if (!sender.hasPermission("fr.ideeess.createevent")){
@@ -39,7 +37,7 @@ public class NewEventCommand implements CommandExecutor {
             return false;
         }
 
-        if(args.length >= 1){
+        if(args.length < 1){
             sender.sendMessage(ChatColor.RED + "Argument manquant : il faut préciser le nom de l'événement");
             return false;
         }

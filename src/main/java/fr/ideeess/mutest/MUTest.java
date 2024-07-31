@@ -1,5 +1,6 @@
 package fr.ideeess.mutest;
 
+import fr.ideeess.mutest.commands.EventCommand;
 import fr.ideeess.mutest.commands.NewEventCommand;
 import fr.ideeess.mutest.events.Event;
 import org.bukkit.Bukkit;
@@ -9,7 +10,7 @@ import java.util.logging.Logger;
 
 public class MUTest extends JavaPlugin {
 
-    Event event = null;
+    private Event event = null;
     Logger logger = Bukkit.getLogger();
 
     @Override
@@ -18,6 +19,7 @@ public class MUTest extends JavaPlugin {
 
         //Commandes
         getCommand("newevent").setExecutor(new NewEventCommand(this));
+        getCommand("event").setExecutor(new EventCommand(this));
     }
 
     @Override
